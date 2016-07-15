@@ -1,4 +1,9 @@
 <h1>Choose wisely, <%= current_user.username %>!!!!</h1>
+
+<% if session[:answer] %>
+  <span><%= session[:answer] %></span>
+<% end %>
+
 <main role="main">
   <ul class="entries-list no-bullets no-padding">
       <li class="entry-item pad-b-4">

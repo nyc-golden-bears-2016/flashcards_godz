@@ -5,12 +5,9 @@ get '/decks/:deck_id/cards/:id' do
   @deck = Deck.find(params[:deck_id])
 
   @card = @deck.cards.find(params[:id])
-
-
-
   erb :'cards/show'
-
 end
+
 
 post '/decks/:deck_id/cards/:id' do
   redirect '/' unless logged_in?
@@ -22,10 +19,13 @@ post '/decks/:deck_id/cards/:id' do
 
     card.answered_correctly = true
     card.save
+    session[:answer] = "Correct!"
+    redirect "/decks/#{params[:deck_id]}"
+  else
+
+    session[:answer] = "Incorrect: The correct answer was #{card.answer}"
+    redirect "/decks/#{params[:deck_id]}"
   end
-
-  redirect "/decks/#{params[:deck_id]}"
-
   # @deck = Deck.find(params[:deck_id])
   # @card = @deck.cards.find(params[:id])
 
