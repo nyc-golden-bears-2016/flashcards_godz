@@ -1,22 +1,20 @@
+get '/decks/:id' do
 
-get '/decks/:deck_id/cards/:id' do
+  @deck = Deck.find(params[:id]) #define instance variable for view
+  @cards = @deck.cards
+  @unanswered_cards = @cards.where(answered_correctly: false).shuffle
 
-  @deck = Deck.find(params[:deck_id])
+  # until @unanswered_cards.length == 0
+  # @unanswered_cards.each do |card|
+  #   redirect "/decks/#{params[:id]}/cards/#{card.id}"
 
-  @card = @deck.cards.find(params[:id])
+  # end
 
-  erb :'cards/show'
+    @unanswered_cards.each do |card|
+      redirect "/decks/#{params[:id]}/cards/#{card.id}"
+    end
 
-end
 
-post '/decks/:deck_id/cards/:id' do
-  @deck = Deck.find(params[:deck_id])
+  erb :'decks/show'
 
-  @card = @deck.cards.find(params[:id])
-
-  if @card.update_attributes(params[:card])
-    redirect "/decks/#{@deck.id}/cards"
-  else
-    erb :'cards/edit' #show edit cards view again(potentially displaying errors)
-  end
 end

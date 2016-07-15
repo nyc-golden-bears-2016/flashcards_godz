@@ -30,9 +30,9 @@ end
 post '/users' do
 
   @user = User.new(params[:user])
-  create_session
 
   if @user.save #saves new user or returns false if unsuccessful
+    session[:user_id] = @user.id
     redirect "/users/#{@user.id}" #redirect back to users index page
   else
     @errors = @user.errors.full_messages

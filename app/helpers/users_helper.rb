@@ -7,7 +7,6 @@ helpers do
     !!current_user
   end
 
-  def create_session
-   session[:user_id] = current_user.id
-  end
+
+
 end

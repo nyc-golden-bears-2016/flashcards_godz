@@ -8,6 +8,22 @@
 }
 
 
+h1 {
+
+  font-size: 3em;
+  font-family: fantasy;
+  margin: 0.67em 0;
+  text-shadow: 2px 2px 14px  purple;
+}
+
+h2 {
+  font-size: 2em;
+  font-family: fantasy;
+ text-shadow: 2px 2px 14px  purple;
+
+}
+
+
 /* element styling */
 html {
   height: 100%;
