@@ -15,7 +15,10 @@
       <nav class="clearfix mar-b-1">
         <ul class="no-bullets no-margin no-padding right">
           <li class="pipe-separate t-light-green left"><a href="/">home</a></li>
+        <% if logged_in? %>
+          <li class="pipe-separate t-light-green left"><a href="/users/logout">logout</a></li>
         </ul>
+        <% end %>
       </nav>
   </header>
 
