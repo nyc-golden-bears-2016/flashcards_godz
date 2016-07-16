@@ -1,8 +1,9 @@
 get '/decks/:id/play' do
+  redirect '/' unless logged_in?
 
   @deck = Deck.find(params[:id]) #define instance variable for view
- cards = @deck.cards
- unanswered_cards = cards.where(answered_correctly: false).shuffle
+  cards = @deck.cards
+  unanswered_cards = cards.where(answered_correctly: false).shuffle
 
   # until @unanswered_cards.length == 0
   # @unanswered_cards.each do |card|
@@ -33,7 +34,8 @@ end
 
 
 get '/decks/:id' do
-
+  redirect '/' unless logged_in?
+  
   stat = Stat.create(user_id: current_user.id, deck_id: params[:id], rounds_played: 0, answered_correctly_first_round: 0)
 
   session[:stat_id] = stat.id

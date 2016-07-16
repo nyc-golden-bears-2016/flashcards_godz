@@ -19,6 +19,7 @@ h1 {
 h2 {
   font-size: 2em;
   font-family: fantasy;
+  color: #32bb7d;
  text-shadow: 2px 2px 14px  purple;
 
 }
@@ -38,13 +39,15 @@ body {
 }
 
 a {
-  color: #32bb7d;
+  font-size: 1.25em;
+  color: white;
   text-decoration: none;
 }
 
   a:hover {
-    color: #6ec7a5;
+    color: purple;
     text-decoration: underline;
+    text-shadow: 2px 2px 10px rgba(148, 0, 211, 0.5);
   }
 
 input[type=text], input[type=password], textarea {
@@ -61,6 +64,10 @@ input[type=text], input[type=password], textarea {
   margin: 0 auto;
 }
 
+.text-center {
+  margin: 0 auto;
+  text-align: center;
+}
 .inline {
   display: inline;
 }
@@ -76,11 +83,13 @@ input[type=text], input[type=password], textarea {
 
 /* formatting */
 .bg-dk-green {
-  background-color: #05724f;
+  background-color: purple;
+  
 }
 
 .bg-white {
-  background-color: #fefefe;
+  background-color: #32bb7d;
+
 }
 
 .button {
@@ -100,6 +109,23 @@ input[type=text], input[type=password], textarea {
   color: #05724f;
 }
 
+.border-green {
+  
+  border-bottom: 5px solid #32bb7d;
+}
+
+.border-purple-and-green {
+  border-top: 3px solid purple;
+  border-bottom: 3px solid purple;
+  outline: 3px solid #32bb7d;
+
+}
+
+.c-green {
+  color: #6ec7a5;
+}
+
+
 .c-lt-gray {
   color: #cccccc;
 }
@@ -108,16 +134,18 @@ input[type=text], input[type=password], textarea {
   color: #fefefe;
 }
 
+
 .c-purple {
-  color: #330033;
-  text-shadow: 2px 2px 14px  white;
+  color: white;
+
+  opacity: 1;
 }
   a.c-white:hover {
     color: #fefefe;
   }
 
   a.c-purple:hover {
-    color: white;
+    color: #32bb7d;
    text-shadow: 2px 2px 14px #330033;
   }
 
@@ -140,7 +168,10 @@ input[type=text], input[type=password], textarea {
 .font-3-4{
   font-size: .75em;
 }
+.font-fantasy {
 
+ font-family: fantasy; 
+}
 .h-10 {
   height: 10em;
 }
@@ -279,6 +310,14 @@ input[type=text], input[type=password], textarea {
 
 .t-light-green {
   color: #32bb7d;
+}
+
+.t-white {
+  color: white;
+}
+
+.t-dk-purple {
+  color: purple;
 }
 
 .text-c {
