@@ -15,17 +15,23 @@ post '/decks/:deck_id/cards/:id' do
   card = deck.cards.find(params[:id])
   user_answer = params[:user_answer]
 
-  if user_answer.downcase == card.answer.downcase
 
+  if user_answer.downcase == card.answer.downcase
+   card.answer_attempts += 1
     card.answered_correctly = true
     card.save
     session[:answer] = "Correct!"
-    redirect "/decks/#{params[:deck_id]}"
+    redirect "/decks/#{params[:deck_id]}/play"
   else
-
+    card.answer_attempts += 1
+    card.save
     session[:answer] = "Incorrect: The correct answer was #{card.answer}"
-    redirect "/decks/#{params[:deck_id]}"
+    redirect "/decks/#{params[:deck_id]}/play"
   end
+
+
+
+
   # @deck = Deck.find(params[:deck_id])
   # @card = @deck.cards.find(params[:id])
 

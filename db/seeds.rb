@@ -3,16 +3,16 @@ questions1 = [
 
         ["We're five little items of an everyday sort; you'll find us all in 'a tennis court'.", "Vowels"],
 
-        [ "What is the beginning of eternity, the end of time and space, the beginning of every end and the end of every race?"," The letter 'E'"],
+        [ "What is the beginning of eternity, the end of time and space, the beginning of every end and the end of every race?","The letter 'E'"],
 
-        [ "What weighs six ounces, sits in a tree, and is very dangerous?"," A sparrow with a machine gun"],
+        [ "What weighs six ounces, sits in a tree, and is very dangerous?","A sparrow with a machine gun"],
 
 
-        [ "When is the time of a clock like the whistle of a train?"," When it's two to two."],
+        [ "When is the time of a clock like the whistle of a train?","When it's two to two"],
 
-        [ "What belongs to you, but is used by others?"," Your name"],
+        [ "What belongs to you, but is used by others?","Your name"],
 
-        [ "What is it that no man wants to have but no man wants to lose?"," A lawsuit"],
+        [ "What is it that no man wants to have but no man wants to lose?","A lawsuit"],
             ]
 
 
@@ -28,9 +28,9 @@ questions2 = [
 
 ["How many sides has a circle?","Two, inside and outside"],
 
-["What has neither nails or bones, but has four fingers and a thumb?","A glove!"],
+["What has neither nails or bones, but has four fingers and a thumb?","A glove"],
 
-["Question, what is it that no man wants, but no man wants to lose?","A law suit!"],
+["Question, what is it that no man wants, but no man wants to lose?","A law suit"],
 
 ["What is black and white and red all over?","A newspaper"],
 
@@ -44,24 +44,27 @@ questions2 = [
 
 questions3 = [
 
-[" What goes up and down without moving?","Stairs."],
+[" What goes up and down without moving?","Stairs"],
 
-[" What goes up white and comes down yellow?","An egg."],
+[" What goes up white and comes down yellow?","An egg"],
 
-[" What grows up while growing down?","A goose."],
+[" What grows up while growing down?","A goose"],
 
-[" What grows when it eats, but dies when it drinks?","Fire."],
+[" What grows when it eats, but dies when it drinks?","Fire"],
 
-[" What has a foot on each side and one in the middle?","A yardstick."],
+[" What has a foot on each side and one in the middle?","A yardstick"],
 
-[" What has feet and legs, and nothing else?","Pantyhose."],
+["What has feet and legs, and nothing else?","Pantyhose"],
 
-[" What has four eyes but cannot see?","Mississippi."],
+["What has four eyes but cannot see?","Mississippi"],
 
-[" What has no beginning, end or middle and touches every continent?","The ocean."],
+["What has no beginning, end or middle and touches every continent?","The ocean"],
 
-[" What has no beginning, end, or middle?","A doughnut."]
+["What has no beginning, end, or middle?","A doughnut"]
 ]
+
+
+questions4 = [["A", "B"], ["C", "D"]]
 
 
 questions1.each do |question, answer|
@@ -77,3 +80,11 @@ questions3.each do |question, answer|
 end
 
 
+questions4.each do |question, answer|
+  Card.create(question: question, answer: answer, deck_id: 4)
+end
+
+Deck.create(name: "Riddles")
+Deck.create(name: "Enigmas")
+Deck.create(name: "Queries")
+Deck.create(name: "Test")

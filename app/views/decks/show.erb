@@ -1,1 +1,3 @@
-hi
+<h1> <%= @deck.name %> </h1>
+<p>You've completed a round of <%= @deck.name %>. You answered <%= current_stat.answered_correctly_first_round %>/ <%= @deck.cards.length %> right on the first try. You submitted <%= current_stat.rounds_played %> total guesses before each card was answered correctly.
+</p>

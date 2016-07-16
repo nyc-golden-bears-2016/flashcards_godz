@@ -10,13 +10,14 @@
   <title>The Riddler</title>
 </head>
 <body>
-  <header role="banner" class="mar-t-5 pad-t-2 pad-b-4 pad-s-1 wrap-float bg-white">
+  <header role="banner" class="mar-t-5 pad-t-1 pad-b-1 pad-s-1 wrap-float bg-white">
     <div class="max-w-700 center wrap-float">
       <nav class="clearfix mar-b-1">
         <ul class="no-bullets no-margin no-padding right">
           <li class="pipe-separate t-light-green left"><a href="/">home</a></li>
         <% if logged_in? %>
           <li class="pipe-separate t-light-green left"><a href="/users/logout">logout</a></li>
+          <li class="pipe-separate t-light-green left"><a href="/users/<%= current_user.id %>/stats">stats</a></li>
         </ul>
         <% end %>
       </nav>

@@ -108,8 +108,17 @@ input[type=text], input[type=password], textarea {
   color: #fefefe;
 }
 
+.c-purple {
+  color: #330033;
+  text-shadow: 2px 2px 14px  white;
+}
   a.c-white:hover {
     color: #fefefe;
+  }
+
+  a.c-purple:hover {
+    color: white;
+   text-shadow: 2px 2px 14px #330033;
   }
 
 .clearfix:after {

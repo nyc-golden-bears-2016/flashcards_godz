@@ -44,11 +44,17 @@ end
 get '/users/:id' do
   redirect '/' unless logged_in?
 
-  @user = User.find(params[:id])
+
   erb :'users/show' #show single user view
 
 end
 
 
+get '/users/:id/stats' do
+  redirect '/' unless logged_in?
+
+  erb :'users/stats' #show single user view
+
+end
 
 
