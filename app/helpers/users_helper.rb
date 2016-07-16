@@ -7,7 +7,9 @@ helpers do
     !!current_user
   end
 
-  def create_session
-   session[:user_id] = current_user.id
+  def current_stat
+    @current_stat ||= Stat.find_by(id: session[:stat_id])
   end
+
+
 end

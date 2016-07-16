@@ -8,6 +8,22 @@
 }
 
 
+h1 {
+
+  font-size: 3em;
+  font-family: fantasy;
+  margin: 0.67em 0;
+  text-shadow: 2px 2px 14px  purple;
+}
+
+h2 {
+  font-size: 2em;
+  font-family: fantasy;
+ text-shadow: 2px 2px 14px  purple;
+
+}
+
+
 /* element styling */
 html {
   height: 100%;
@@ -92,8 +108,17 @@ input[type=text], input[type=password], textarea {
   color: #fefefe;
 }
 
+.c-purple {
+  color: #330033;
+  text-shadow: 2px 2px 14px  white;
+}
   a.c-white:hover {
     color: #fefefe;
+  }
+
+  a.c-purple:hover {
+    color: white;
+   text-shadow: 2px 2px 14px #330033;
   }
 
 .clearfix:after {

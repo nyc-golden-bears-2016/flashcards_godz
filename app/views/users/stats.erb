@@ -1,0 +1,15 @@
+<h1>Welcome <%= current_user.username %>! Here is your record of failure</h1>
+
+<main role="main">
+  <ul class="entries-list no-bullets no-padding">
+<% current_user.stats.reverse.each do |stat| %>
+
+<h1> <%= stat.deck.name %> </h1>
+<span class="entry-date block font-3-4 c-lt-gray"><%= "Taken on #{stat.created_at}." %></span>
+<p>You answered <%= stat.answered_correctly_first_round %>/ <%= stat.deck.cards.length %> right on the first try. You submitted <%= stat.rounds_played %> total guesses before each card was answered correctly.
+</p>
+
+<% end %>
+
+  </ul>
+</main>
