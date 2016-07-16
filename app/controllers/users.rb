@@ -53,6 +53,8 @@ end
 get '/users/:id/stats' do
   redirect '/' unless logged_in?
 
+  
+
   erb :'users/stats' #show single user view
 
 end

@@ -1,15 +1,21 @@
-<h1>Welcome <%= current_user.username %>! Here is your record of failure</h1>
+<% if current_user.stats.count > 0 %>
 
-<main role="main">
-  <ul class="entries-list no-bullets no-padding">
-<% current_user.stats.reverse.each do |stat| %>
+  <h1>Welcome <%= current_user.username %>! Here is your record of failure</h1>
 
-<h1> <%= stat.deck.name %> </h1>
-<span class="entry-date block font-3-4 c-lt-gray"><%= "Taken on #{stat.created_at}." %></span>
-<p>You answered <%= stat.answered_correctly_first_round %>/ <%= stat.deck.cards.length %> right on the first try. You submitted <%= stat.rounds_played %> total guesses before each card was answered correctly.
-</p>
+  <main role="main">
+    <ul class="entries-list no-bullets no-padding">
+      <% current_user.stats.reverse.each do |stat| %>
+
+        <h2> <%= stat.deck.name %> </h2>
+        <span class="entry-date block font-3-4 c-green"><%= "Taken on #{stat.created_at}." %></span>
+        <p>You answered <%= stat.answered_correctly_first_round %>/ <%= stat.deck.cards.length %> right on the first try. You submitted <%= stat.rounds_played %> total guesses before each card was answered correctly.</p>
+
+      <% end %>
+    </ul>
+  </main>
+
+<% else %>
+
+<h1> <%= current_user.username %> you fool! You haven't answered any of my riddles yet.</h1>
 
 <% end %>
-
-  </ul>
-</main>
